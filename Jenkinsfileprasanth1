@@ -7,7 +7,7 @@ echo "the BUILD NUMBER is: $(env.BUILD_NUMBER)"
 properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '5', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: '']])
 //checkout code
 stage('CheckoutDode'){
- git branch: 'development', credentialsId: '12f4826f-63d9-4d76-b1da-3033d6ea4167', url: 'https://github.com/prasanthnn/maven-web-application.git'
+git credentialsId: '12f4826f-63d9-4d76-b1da-3033d6ea4167', url: 'https://github.com/prasanthnn/maven-web-application.git'
 }
 //build stage
 stage('Build'){
